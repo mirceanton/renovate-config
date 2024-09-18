@@ -1,0 +1,17 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "description": [
+        "Meta-Config element that includes all labelling configurations."
+    ],
+    "extends": [
+        "github>mirceanton/renovate-config//labels/datasources-ansible.json5",
+        "github>mirceanton/renovate-config//labels/datasources-docker.json5",
+        "github>mirceanton/renovate-config//labels/datasources-github-actions.json5",
+        "github>mirceanton/renovate-config//labels/datasources-github-releases.json5",
+        "github>mirceanton/renovate-config//labels/datasources-go.json5",
+        "github>mirceanton/renovate-config//labels/datasources-helm.json5",
+        "github>mirceanton/renovate-config//labels/datasources-ruby.json5",
+        "github>mirceanton/renovate-config//labels/datasources-terraform.json5",
+        "github>mirceanton/renovate-config//labels/update-types.json5"
+    ]
+}

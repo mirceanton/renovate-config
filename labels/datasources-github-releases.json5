@@ -1,0 +1,14 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"packageRules": [
+		{
+			"matchDatasources": [
+				"github-releases",
+				"github-tags"
+			],
+			"addLabels": [
+				"renovate/github-release"
+			]
+		}
+	]
+}
