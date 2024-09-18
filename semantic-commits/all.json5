@@ -1,0 +1,16 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "description": [
+        "Meta-Config element that includes all semantic commit configurations."
+    ],
+    "extends": [
+        "github>mirceanton/renovate-config//semantic-commits/datasources-ansible.json5",
+        "github>mirceanton/renovate-config//semantic-commits/datasources-docker.json5",
+        "github>mirceanton/renovate-config//semantic-commits/datasources-github-actions.json5",
+        "github>mirceanton/renovate-config//semantic-commits/datasources-golang.json5",
+        "github>mirceanton/renovate-config//semantic-commits/datasources-helm.json5",
+        "github>mirceanton/renovate-config//semantic-commits/datasources-ruby.json5",
+        "github>mirceanton/renovate-config//semantic-commits/datasources-terraform.json5",
+        "github>mirceanton/renovate-config//semantic-commits/update-types.json5"
+    ]
+}
