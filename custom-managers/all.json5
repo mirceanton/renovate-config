@@ -1,0 +1,10 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "description": [
+        "Meta-Config element that includes all custom-manager configurations."
+    ],
+    "extends": [
+        "github>mirceanton/renovate-config//custom-managers/regex-github-urls.json5",
+        "github>mirceanton/renovate-config//custom-managers/regex-yaml.json5"
+    ]
+}
