@@ -8,22 +8,16 @@
             "matchUpdateTypes": [
                 "major"
             ],
-            "semanticCommitType": "feat",
+            "semanticCommitType": "deps",
             "commitMessagePrefix": "{{semanticCommitType}}({{semanticCommitScope}})!:",
             "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
         },
         {
             "matchUpdateTypes": [
-                "minor"
-            ],
-            "semanticCommitType": "feat",
-            "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
-        },
-        {
-            "matchUpdateTypes": [
+                "minor",
                 "patch"
             ],
-            "semanticCommitType": "fix",
+            "semanticCommitType": "deps",
             "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
         },
         {
