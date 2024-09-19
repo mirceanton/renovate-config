@@ -4,8 +4,5 @@
         "Full send with Renovate. This config allows auto-merge on EVERYTHING as long as all PR workflows pass."
     ],
     "automerge": true, //!! Enable auto-merging for ALL Renovate PRs (if they pass the CI)
-    "automergeType": "pr", // Specifies that Renovate should auto-merge after the PR is created and passes all checks
-    "requiredStatusChecks": null, // allows Renovate to automatically detect and wait for all required status checks to pass before merging
-    "branchConcurrentLimit": 0, // This removes any limit on how many branches can be updated concurrently by Renovate
-    "prConcurrentLimit": 0 // Removes the limit on how many PRs can be created by Renovate at once.
+    "automergeType": "pr" // Specifies that Renovate should auto-merge after the PR is created and passes all checks
 }
