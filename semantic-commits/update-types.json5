@@ -9,7 +9,7 @@
                 "major"
             ],
             "semanticCommitType": "deps",
-            "commitMessagePrefix": "{{semanticCommitType}}({{semanticCommitScope}})!:",
+            "commitMessagePrefix": "{{semanticCommitType}}({{semanticCommitScope}}!):",
             "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
         },
         {
