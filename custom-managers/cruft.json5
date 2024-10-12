@@ -1,7 +1,9 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "regexManagers": [
+    "customManagers": [
         {
+            "customType": "regex",
+            "description": "Update cruft templates.",
             "fileMatch": [
                 "^.cruft.json$"
             ],
