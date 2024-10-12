@@ -1,0 +1,29 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base"
+    ],
+    "enabledManagers": [
+        "regex"
+    ],
+    "regexManagers": [
+        {
+            "fileMatch": [
+                "^.cruft.json$"
+            ],
+            "matchStrings": [
+                "\"template\": \"(?<depName>.*?)\",\\n *\"checkout\": \"(?<currentValue>.*?)\""
+            ],
+            "datasourceTemplate": "git-tags"
+        }
+    ],
+    "postUpgradeTasks": {
+        "commands": [
+            "git checkout .",
+            "cruft update -y --not-strict -c '{{{toVersion}}}' || echo \"run cruft update manually!\" > CRUFT_UPDATE_FAILED"
+        ],
+        "fileFilters": [
+            "**/*"
+        ]
+    }
+}
