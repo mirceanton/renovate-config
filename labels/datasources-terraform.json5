@@ -6,7 +6,7 @@
 				"terraform-provider"
 			],
 			"addLabels": [
-				"renovate/terraform"
+				"renovate/terraform-provider"
 			]
 		}
 	]
