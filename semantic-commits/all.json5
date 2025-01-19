@@ -4,7 +4,6 @@
         "Meta-Config element that includes all semantic commit configurations."
     ],
     "extends": [
-        "github>mirceanton/renovate-config//semantic-commits/datasources-ansible.json5",
         "github>mirceanton/renovate-config//semantic-commits/datasources-docker.json5",
         "github>mirceanton/renovate-config//semantic-commits/datasources-github-actions.json5",
         "github>mirceanton/renovate-config//semantic-commits/datasources-golang.json5",
