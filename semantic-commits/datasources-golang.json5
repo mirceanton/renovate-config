@@ -15,8 +15,7 @@
                 "gomod",
                 "golang-version"
             ],
-            "semanticCommitScope": "go",
-            "semanticCommitType": "fix"
+            "semanticCommitType": "patch"
         },
         {
             "matchDatasources": [
