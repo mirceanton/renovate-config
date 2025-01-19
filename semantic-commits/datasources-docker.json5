@@ -5,7 +5,7 @@
     ],
     "packageRules": [
         {
-            "matchManagers": [
+            "matchDatasources": [
                 "docker"
             ],
             "semanticCommitType": "chore",
