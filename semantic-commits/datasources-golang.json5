@@ -5,6 +5,20 @@
     ],
     "packageRules": [
         {
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch"
+            ],
+            "matchDatasources": [
+                "go",
+                "gomod",
+                "golang-version"
+            ],
+            "semanticCommitScope": "go",
+            "semanticCommitType": "fix"
+        },
+        {
             "matchDatasources": [
                 "go",
                 "gomod",

@@ -8,6 +8,7 @@
             "matchManagers": [
                 "github-actions"
             ],
+            "semanticCommitType": "ci",
             "semanticCommitScope": "github-actions"
         }
     ]

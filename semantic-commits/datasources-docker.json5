@@ -5,9 +5,10 @@
     ],
     "packageRules": [
         {
-            "matchDatasources": [
+            "matchManagers": [
                 "docker"
             ],
+            "semanticCommitType": "chore",
             "semanticCommitScope": "container"
         }
     ]

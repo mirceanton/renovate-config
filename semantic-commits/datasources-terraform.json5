@@ -5,6 +5,18 @@
     ],
     "packageRules": [
         {
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch"
+            ],
+            "matchDatasources": [
+                "terraform-provider"
+            ],
+            "semanticCommitScope": "terraform",
+            "semanticCommitType": "fix"
+        },
+        {
             "matchDatasources": [
                 "terraform-provider"
             ],

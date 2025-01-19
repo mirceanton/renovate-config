@@ -8,7 +8,6 @@
             "matchUpdateTypes": [
                 "major"
             ],
-            "semanticCommitType": "deps",
             "commitMessagePrefix": "{{semanticCommitType}}({{semanticCommitScope}}!):",
             "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
         },
@@ -17,7 +16,6 @@
                 "minor",
                 "patch"
             ],
-            "semanticCommitType": "deps",
             "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )"
         },
         {
