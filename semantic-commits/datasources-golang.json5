@@ -6,7 +6,8 @@
     "packageRules": [
         {
             "matchDatasources": [
-                "gomod"
+                "gomod",
+                "go"
             ],
             "semanticCommitScope": "go"
         }
