@@ -3,9 +3,7 @@
     "customManagers": [
         {
             "customType": "regex",
-            "fileMatch": [
-                "(?:^|/)\.ya?ml$"
-            ],
+            "fileMatch": [".+\\.ya?ml$"],
             "matchStrings": [
                 // https://github.com/rancher/system-upgrade-controller/releases/download/v0.13.2/crd.yaml
                 "https:\\/\\/github.com\\/(?<depName>\\S+?\\/\\S+?)\\/releases\\/download\\/(?<currentValue>(v|\\d)\\S+?)\\/\\S+",
