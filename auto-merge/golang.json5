@@ -2,19 +2,30 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "packageRules": [
         {
-            "description": [
-                "Auto-merge golang updates for minor, patch and digest"
-            ],
+            "description": "Auto-merge minor/patch/digest",
             "matchDatasources": [
                 "gomod"
             ],
             "automerge": true,
-            "automergeType": "pr",
+            "automergeType": "branch",
             "matchUpdateTypes": [
                 "minor",
                 "patch",
                 "digest"
-            ]
+            ],
+            "minimumReleaseAge": "7 days"
+        },
+        {
+            "description": "Open PRs for major updates",
+            "matchDatasources": [
+                "gomod"
+            ],
+            "automerge": false,
+            "automergeType": "pr",
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "minimumReleaseAge": "7 days"
         }
     ]
 }

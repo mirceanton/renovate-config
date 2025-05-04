@@ -3,6 +3,6 @@
     "description": [
         "Full send with Renovate. This config allows auto-merge on EVERYTHING as long as all PR workflows pass."
     ],
-    "automerge": true, //!! Enable auto-merging for ALL Renovate PRs (if they pass the CI)
-    "automergeType": "pr" // Specifies that Renovate should auto-merge after the PR is created and passes all checks
+    "automerge": true,
+    "automergeType": "branch"
 }

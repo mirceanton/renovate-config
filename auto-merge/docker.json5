@@ -2,19 +2,29 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "packageRules": [
         {
-            "description": [
-                "Auto-merge container updates for minor, patch and digest"
-            ],
+            "description": "Auto-merge minor/patch/digest",
             "matchDatasources": [
                 "docker"
             ],
             "automerge": true,
-            "automergeType": "pr",
+            "automergeType": "branch",
             "matchUpdateTypes": [
                 "minor",
                 "patch",
                 "digest"
             ]
+        },
+        {
+            "description": "Open PRs for major updates",
+            "matchDatasources": [
+                "docker"
+            ],
+            "automerge": false,
+            "automergeType": "pr",
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "minimumReleaseAge": "7 days"
         }
     ]
 }

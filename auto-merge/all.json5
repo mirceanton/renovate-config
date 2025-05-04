@@ -4,9 +4,9 @@
         "Meta-Config element that includes all auto-merge configurations."
     ],
     "extends": [
-        "github>mirceanton/renovate-config//auto-merge/devcontainers.json5",
         "github>mirceanton/renovate-config//auto-merge/docker.json5",
         "github>mirceanton/renovate-config//auto-merge/github-actions.json5",
-        "github>mirceanton/renovate-config//auto-merge/golang.json5"
+        "github>mirceanton/renovate-config//auto-merge/golang.json5",
+        "github>mirceanton/renovate-config//auto-merge/mise.json5"
     ]
 }

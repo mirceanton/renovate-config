@@ -4,22 +4,21 @@
         {
             "description": "Auto-merge minor/patch/digest",
             "matchManagers": [
-                "github-actions"
+                "mise"
             ],
             "automerge": true,
             "automergeType": "branch",
             "matchUpdateTypes": [
                 "minor",
                 "patch",
-                "digest",
-                "pinDigest"
+                "digest"
             ],
             "minimumReleaseAge": "7 days"
         },
         {
             "description": "Open PRs for major updates",
             "matchManagers": [
-                "github-actions"
+                "mise"
             ],
             "automerge": false,
             "automergeType": "pr",
