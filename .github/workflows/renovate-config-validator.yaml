@@ -26,5 +26,5 @@ jobs:
       - name: Setup mise
         uses: jdx/mise-action@7a111ead46986ccad89a74ad013ba2a7c08c9e67 # v2.2.1
 
-      - name: Run actionlint
-        run: mise exec renovate-config-validator default.json5
+      - name: Validate config
+        run: mise exec -- renovate-config-validator default.json5
