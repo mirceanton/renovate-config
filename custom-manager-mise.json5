@@ -1,0 +1,54 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "customManagers": [
+      {
+        "customType": "regex",
+        "description": "Process npm packages in mise.toml",
+        "fileMatch": [
+          "^\\.mise\\.toml$",
+          "^mise\\.toml$",
+          "^mise/config\\.toml$",
+          "^\\.config/mise\\.toml$",
+          "^\\.config/mise/config\\.toml$"
+        ],
+        "matchStrings": [
+          "\"npm:(?<packageName>@[\\w\\-\\/]+)\" = \"(?<currentValue>[\\d\\.]+)\""
+        ],
+        "datasourceTemplate": "npm",
+        "versioningTemplate": "semver"
+      },
+      {
+        "customType": "regex",
+        "description": "Process pipx packages in mise.toml",
+        "fileMatch": [
+          "^\\.mise\\.toml$",
+          "^mise\\.toml$",
+          "^mise/config\\.toml$",
+          "^\\.config/mise\\.toml$",
+          "^\\.config/mise/config\\.toml$"
+        ],
+        "matchStrings": [
+          "\"pipx:(?<packageName>[\\w\\-\\.]+)\" = \"(?<currentValue>[\\d\\.]+|latest)\""
+        ],
+        "datasourceTemplate": "pypi",
+        "versioningTemplate": "pep440"
+      },
+      {
+        "customType": "regex",
+        "description": "Process aqua packages in mise.toml",
+        "fileMatch": [
+          "^\\.mise\\.toml$",
+          "^mise\\.toml$",
+          "^mise/config\\.toml$",
+          "^\\.config/mise\\.toml$",
+          "^\\.config/mise/config\\.toml$"
+        ],
+        "matchStrings": [
+          "\"aqua:(?<packageName>[\\w\\-]+\\/[\\w\\-]+)\" = \"(?<currentValue>[\\d\\.]+|latest|v[\\d\\.]+)\""
+        ],
+        "datasourceTemplate": "github-releases",
+        "versioningTemplate": "semver",
+        "extractVersionTemplate": "^v?(?<version>.*)$"
+      }
+    ]
+  }

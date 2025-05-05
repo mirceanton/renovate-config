@@ -1,8 +1,0 @@
-{
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "description": [
-        "Full send with Renovate. This config allows auto-merge on EVERYTHING as long as all PR workflows pass."
-    ],
-    "automerge": true,
-    "automergeType": "branch"
-}
