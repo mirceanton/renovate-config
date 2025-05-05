@@ -7,7 +7,7 @@
     "commitBodyTable": true,
     "rebaseWhen": "auto",
     "autodiscover": true,
-    "gitAuthor": "\"mr-borboto[bot] <170036086+mr-borboto[bot]@users.noreply.github.com>\"",
+    "gitAuthor": "mr-borboto[bot] <170036086+mr-borboto[bot]@users.noreply.github.com>",
     "extends": [
         ":disableRateLimiting",
         "config:recommended",
