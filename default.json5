@@ -1,0 +1,16 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "timezone": "Europe/Bucharest",
+    "dependencyDashboard": true,
+    "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+    "semanticCommits": "enabled",
+    "commitBodyTable": true,
+    "rebaseWhen": "auto",
+    "autodiscover": true,
+    "gitAuthor": "\"mr-borboto[bot] <170036086+mr-borboto[bot]@users.noreply.github.com>\"",
+    "extends": [
+        ":disableRateLimiting",
+        "config:recommended",
+        "helpers:pinGitHubActionDigests"
+    ]
+}
