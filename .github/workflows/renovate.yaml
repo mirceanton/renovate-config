@@ -52,6 +52,7 @@ jobs:
           # https://docs.renovatebot.com/self-hosted-configuration/
           LOG_LEVEL: "${{ inputs.log-level || 'debug' }}"
           RENOVATE_CONFIG_FILE: .renovaterc.json
+          RENOVATE_AUTODISCOVER: true
           RENOVATE_AUTODISCOVER_FILTER: "${{ github.repository }}"
           RENOVATE_DRY_RUN: "${{ inputs.dry-run == true }}"
           RENOVATE_TOKEN: "${{ steps.app-token.outputs.token }}"
