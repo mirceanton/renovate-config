@@ -12,9 +12,9 @@
         ":disableRateLimiting",
         "config:recommended",
         "helpers:pinGitHubActionDigests",
-        "github>mirceanton/renovate-config:custom-manager-mise.json5",
-        "github>mirceanton/renovate-config:custom-manager-github-links.json5",
-        "github>mirceanton/renovate-config:custom-manager-yaml.json5"
+        "github>mirceanton/renovate-config//custom-manager-mise.json5",
+        "github>mirceanton/renovate-config//custom-manager-github-links.json5",
+        "github>mirceanton/renovate-config//custom-manager-yaml.json5"
     ],
     "packageRules": [
         // Auto Merge Types
