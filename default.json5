@@ -11,6 +11,79 @@
     "extends": [
         ":disableRateLimiting",
         "config:recommended",
-        "helpers:pinGitHubActionDigests"
+        "helpers:pinGitHubActionDigests",
+        "github>mirceanton/renovate-config:custom-manager-mise.json5",
+        "github>mirceanton/renovate-config:custom-manager-github-links.json5",
+        "github>mirceanton/renovate-config:custom-manager-yaml.json5"
+    ],
+    "packageRules": [
+        // Auto Merge Types
+        { "matchUpdateTypes": ["minor", "patch", "digest"], "automerge": true, "automergeType": "branch" },
+        { "matchUpdateTypes": ["major"], "automerge": false, "automergeType": "pr" },
+
+        // Type Labels
+        { "matchUpdateTypes": ["major"], "labels": ["type/major"] },
+        { "matchUpdateTypes": ["minor"], "labels": ["type/minor"] },
+        { "matchUpdateTypes": ["patch"], "labels": ["type/patch"] },
+        { "matchUpdateTypes": ["digest"], "labels": ["type/digest"] },
+
+        // Datasource Labels
+        { "matchDatasources": ["github-releases", "github-tags"], "addLabels": ["renovate/github-release"] },
+        { "matchDatasources": ["docker"], "addLabels": ["renovate/container"] },
+        { "matchDatasources": ["go", "golang-version"], "addLabels": ["renovate/go"] },
+        { "matchDatasources": ["helm"], "addLabels": ["renovate/helm"] },
+        { "matchDatasources": ["npm", "node-version"], "addLabels": ["renovate/node"] },
+        { "matchDatasources": ["pypi", "python-version"], "addLabels": ["renovate/python"] },
+        { "matchDatasources": ["rubygems", "ruby-version"], "addLabels": ["renovate/ruby"] },
+        { "matchDatasources": ["terraform-module", "terraform-provider"], "addLabels": ["renovate/terraform"] },
+
+        // Manager Labels
+        { "matchManagers": ["github-actions"], "addLabels": ["renovate/github-action"] },
+        { "matchManagers": ["mise"], "addLabels": ["renovate/mise"] },
+
+        // Semantic Commit Types and Messages
+        {
+            "matchUpdateTypes": ["major"],
+            "semanticCommitType": "feat",
+            "commitMessageTopic": "{{depName}}",
+            "commitMessagePrefix": "{{semanticCommitType}}({{semanticCommitScope}})!:",
+            "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
+            "commitMessageSuffix": ""
+        },
+        {
+            "matchUpdateTypes": ["minor"],
+            "semanticCommitType": "feat",
+            "commitMessageTopic": "{{depName}}",
+            "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
+            "commitMessageSuffix": ""
+        },
+        {
+            "matchUpdateTypes": ["patch"],
+            "semanticCommitType": "fix",
+            "commitMessageTopic": "{{depName}}",
+            "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
+            "commitMessageSuffix": ""
+        },
+        {
+            "matchUpdateTypes": ["digest"],
+            "semanticCommitType": "chore",
+            "commitMessageTopic": "{{depName}}",
+            "commitMessageExtra": "( {{currentDigestShort}} → {{newDigestShort}} )",
+            "commitMessageSuffix": ""
+        },
+
+        // Semantic Commit DataSource Scopes
+        { "matchDatasources": ["github-releases", "github-tags"], "semanticCommitScope": ["renovate/github-release"] },
+        { "matchDatasources": ["docker"], "semanticCommitScope": "container" },
+        { "matchDatasources": ["go", "golang-version"], "semanticCommitScope": "go" },
+        { "matchDatasources": ["helm"], "semanticCommitScope": "helm" },
+        { "matchDatasources": ["npm", "node-version"], "semanticCommitScope": "node" },
+        { "matchDatasources": ["pypi", "python-version"], "semanticCommitScope": "python" },
+        { "matchDatasources": ["rubygems", "ruby-version"], "semanticCommitScope": "ruby" },
+        { "matchDatasources": ["terraform-module", "terraform-provider"], "semanticCommitScope": "terraform" },
+
+        // Semantic Commit Managers Scopes
+        { "matchManagers": ["github-actions"], "semanticCommitType": "ci", "semanticCommitScope": "github-action" },
+        { "matchManagers": ["mise"], "semanticCommitScope": "mise" }
     ]
 }
