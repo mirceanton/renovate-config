@@ -12,7 +12,8 @@
           "^\\.config/mise/config\\.toml$"
         ],
         "matchStrings": [
-          "\"npm:(?<packageName>@[\\w\\-\\/]+)\" = \"(?<currentValue>[\\d\\.]+)\""
+          "\"npm:(?<packageName>@[\\w\\-\\/]+)\" = \"(?<currentValue>[\\d\\.]+)\"",
+          "\"npm:(?<packageName>[\\w\\-\\/]+)\" = \"(?<currentValue>[\\d\\.]+)\""
         ],
         "datasourceTemplate": "npm",
         "versioningTemplate": "semver"
