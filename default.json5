@@ -73,7 +73,6 @@
         },
 
         // Semantic Commit DataSource Scopes
-        { "matchDatasources": ["github-releases", "github-tags"], "semanticCommitScope": ["renovate/github-release"] },
         { "matchDatasources": ["docker"], "semanticCommitScope": "container" },
         { "matchDatasources": ["go", "golang-version"], "semanticCommitScope": "go" },
         { "matchDatasources": ["helm"], "semanticCommitScope": "helm" },
