@@ -1,6 +1,20 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "mise": { "enabled": false },
+    "packageRules": [
+      {
+        "matchFileNames": [
+          "^\\.mise\\.toml$",
+          "^mise\\.toml$",
+          "^mise/config\\.toml$",
+          "^\\.config/mise\\.toml$",
+          "^\\.config/mise/config\\.toml$"
+        ],
+        "semanticCommitType": "chore",
+        "semanticCommitScope": "mise",
+        "addLabels": ["renovate/mise"]
+      }
+    ],
     "customManagers": [
       {
         "customType": "regex",
