@@ -8,14 +8,6 @@
     "rebaseWhen": "auto",
     "autodiscover": true,
     "gitAuthor": "mr-borboto[bot] <170036086+mr-borboto[bot]@users.noreply.github.com>",
-    "extends": [
-        ":disableRateLimiting",
-        "config:recommended",
-        "helpers:pinGitHubActionDigests",
-        "github>mirceanton/renovate-config//custom-manager-mise.json5",
-        "github>mirceanton/renovate-config//custom-manager-github-links.json5",
-        "github>mirceanton/renovate-config//custom-manager-yaml.json5"
-    ],
     "packageRules": [
         // Auto Merge Types
         { "matchUpdateTypes": ["minor", "patch", "digest"], "automerge": true, "automergeType": "branch" },
@@ -84,5 +76,13 @@
         // Semantic Commit Managers Scopes
         { "matchManagers": ["github-actions"], "semanticCommitType": "ci", "semanticCommitScope": "github-action" },
         { "matchManagers": ["mise"], "semanticCommitType": "chore", "semanticCommitScope": "mise" }
+    ],
+    "extends": [
+        ":disableRateLimiting",
+        "config:recommended",
+        "helpers:pinGitHubActionDigests",
+        "github>mirceanton/renovate-config//custom-manager-mise.json5",
+        "github>mirceanton/renovate-config//custom-manager-github-links.json5",
+        "github>mirceanton/renovate-config//custom-manager-yaml.json5"
     ]
 }
