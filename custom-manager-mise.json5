@@ -3,7 +3,7 @@
     "mise": { "enabled": false },
     "packageRules": [
       {
-        "matchFileNames": [".?mise.toml"],
+        "matchFileNames": [".mise.toml", "mise.toml"],
         "semanticCommitType": "chore",
         "semanticCommitScope": "mise",
         "addLabels": ["renovate/mise"]
@@ -13,7 +13,7 @@
       {
         "customType": "regex",
         "description": "Process npm packages in mise.toml",
-        "fileMatch": [".?mise.toml"],
+        "fileMatch": [".mise.toml", "mise.toml"],
         "matchStrings": [
           "\"npm:(?<packageName>@[\\w\\-\\/]+)\" = \"(?<currentValue>[\\d\\.]+)\"",
           "\"npm:(?<packageName>[\\w\\-\\/]+)\" = \"(?<currentValue>[\\d\\.]+)\""
@@ -24,7 +24,7 @@
       {
         "customType": "regex",
         "description": "Process pipx packages in mise.toml",
-        "fileMatch": [".?mise.toml"],
+        "fileMatch": [".mise.toml", "mise.toml"],
         "matchStrings": [
           "\"pipx:(?<packageName>[\\w\\-\\.]+)\" = \"(?<currentValue>[\\d\\.]+|latest)\""
         ],
@@ -34,7 +34,7 @@
       {
         "customType": "regex",
         "description": "Process aqua packages in mise.toml",
-        "fileMatch": [".?mise.toml"],
+        "fileMatch": [".mise.toml", "mise.toml"],
         "matchStrings": [
           "\"aqua:(?<packageName>[\\w\\-]+\\/[\\w\\-]+)\" = \"(?<currentValue>[\\d\\.]+|latest|v[\\d\\.]+)\""
         ],
