@@ -73,16 +73,16 @@
         },
 
         // Semantic Commit DataSource Scopes
-        { "matchDatasources": ["docker"], "semanticCommitScope": "container" },
-        { "matchDatasources": ["go", "golang-version"], "semanticCommitScope": "go" },
-        { "matchDatasources": ["helm"], "semanticCommitScope": "helm" },
-        { "matchDatasources": ["npm", "node-version"], "semanticCommitScope": "node" },
-        { "matchDatasources": ["pypi", "python-version"], "semanticCommitScope": "python" },
-        { "matchDatasources": ["rubygems", "ruby-version"], "semanticCommitScope": "ruby" },
-        { "matchDatasources": ["terraform-module", "terraform-provider"], "semanticCommitScope": "terraform" },
+        {"matchDatasources": ["docker"], "semanticCommitType": "fix", "semanticCommitScope": "container" },
+        {"matchDatasources": ["go", "golang-version"], "semanticCommitType": "fix", "semanticCommitScope": "go" },
+        {"matchDatasources": ["helm"], "semanticCommitType": "fix", "semanticCommitScope": "helm" },
+        {"matchDatasources": ["npm", "node-version"], "semanticCommitType": "fix", "semanticCommitScope": "node" },
+        {"matchDatasources": ["pypi", "python-version"], "semanticCommitType": "fix", "semanticCommitScope": "python" },
+        {"matchDatasources": ["rubygems", "ruby-version"], "semanticCommitType": "fix", "semanticCommitScope": "ruby" },
+        {"matchDatasources": ["terraform-module", "terraform-provider"], "semanticCommitType": "fix", "semanticCommitScope": "terraform" },
 
         // Semantic Commit Managers Scopes
         { "matchManagers": ["github-actions"], "semanticCommitType": "ci", "semanticCommitScope": "github-action" },
-        { "matchManagers": ["mise"], "semanticCommitScope": "mise" }
+        { "matchManagers": ["mise"], "semanticCommitType": "chore", "semanticCommitScope": "mise" }
     ]
 }
