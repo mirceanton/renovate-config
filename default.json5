@@ -1,13 +1,18 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "timezone": "Europe/Bucharest",
     "dependencyDashboard": true,
     "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-    "semanticCommits": "enabled",
-    "commitBodyTable": true,
-    "rebaseWhen": "auto",
-    "autodiscover": true,
+    "timezone": "Europe/Bucharest",
     "gitAuthor": "mr-borboto[bot] <170036086+mr-borboto[bot]@users.noreply.github.com>",
+    "extends": [
+        ":disableRateLimiting",
+        "config:recommended",
+        "helpers:pinGitHubActionDigests",
+        "github>mirceanton/renovate-config//semantic-commits.json5",
+        "github>mirceanton/renovate-config//custom-manager-mise.json5",
+        "github>mirceanton/renovate-config//custom-manager-github-links.json5",
+        "github>mirceanton/renovate-config//custom-manager-yaml.json5"
+    ],
     "packageRules": [
         // Auto Merge Types
         { "matchUpdateTypes": ["minor", "patch", "digest"], "automerge": true, "automergeType": "branch" },
@@ -31,58 +36,6 @@
 
         // Manager Labels
         { "matchManagers": ["github-actions"], "addLabels": ["renovate/github-action"] },
-        { "matchManagers": ["mise"], "addLabels": ["renovate/mise"] },
-
-        // Semantic Commit Types and Messages
-        {
-            "matchUpdateTypes": ["major"],
-            "semanticCommitType": "feat",
-            "commitMessageTopic": "{{depName}}",
-            "commitMessagePrefix": "{{semanticCommitType}}({{semanticCommitScope}})!:",
-            "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
-            "commitMessageSuffix": ""
-        },
-        {
-            "matchUpdateTypes": ["minor"],
-            "semanticCommitType": "feat",
-            "commitMessageTopic": "{{depName}}",
-            "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
-            "commitMessageSuffix": ""
-        },
-        {
-            "matchUpdateTypes": ["patch"],
-            "semanticCommitType": "fix",
-            "commitMessageTopic": "{{depName}}",
-            "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
-            "commitMessageSuffix": ""
-        },
-        {
-            "matchUpdateTypes": ["digest"],
-            "semanticCommitType": "chore",
-            "commitMessageTopic": "{{depName}}",
-            "commitMessageExtra": "( {{currentDigestShort}} → {{newDigestShort}} )",
-            "commitMessageSuffix": ""
-        },
-
-        // Semantic Commit DataSource Scopes
-        {"matchDatasources": ["docker"], "semanticCommitType": "fix", "semanticCommitScope": "container" },
-        {"matchDatasources": ["go", "golang-version"], "semanticCommitType": "fix", "semanticCommitScope": "go" },
-        {"matchDatasources": ["helm"], "semanticCommitType": "fix", "semanticCommitScope": "helm" },
-        {"matchDatasources": ["npm", "node-version"], "semanticCommitType": "fix", "semanticCommitScope": "node" },
-        {"matchDatasources": ["pypi", "python-version"], "semanticCommitType": "fix", "semanticCommitScope": "python" },
-        {"matchDatasources": ["rubygems", "ruby-version"], "semanticCommitType": "fix", "semanticCommitScope": "ruby" },
-        {"matchDatasources": ["terraform-module", "terraform-provider"], "semanticCommitType": "fix", "semanticCommitScope": "terraform" },
-
-        // Semantic Commit Managers Scopes
-        { "matchManagers": ["github-actions"], "semanticCommitType": "ci", "semanticCommitScope": "github-action" },
-        { "matchManagers": ["mise"], "semanticCommitType": "chore", "semanticCommitScope": "mise" }
-    ],
-    "extends": [
-        ":disableRateLimiting",
-        "config:recommended",
-        "helpers:pinGitHubActionDigests",
-        "github>mirceanton/renovate-config//custom-manager-mise.json5",
-        "github>mirceanton/renovate-config//custom-manager-github-links.json5",
-        "github>mirceanton/renovate-config//custom-manager-yaml.json5"
+        { "matchManagers": ["mise"], "addLabels": ["renovate/mise"] }
     ]
 }
