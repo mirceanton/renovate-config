@@ -13,6 +13,7 @@
         "github>mirceanton/renovate-config//custom-manager-github-links.json5",
         "github>mirceanton/renovate-config//custom-manager-yaml.json5"
     ],
+    "minimumReleaseAge": "3 days",
     "packageRules": [
         // Auto Merge Types
         { "matchUpdateTypes": ["minor", "patch", "digest"], "automerge": true, "automergeType": "branch" },
