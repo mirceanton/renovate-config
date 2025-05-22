@@ -15,6 +15,15 @@
     ],
     "minimumReleaseAge": "3 days",
     "packageRules": [
+        // Package Scheduling
+        {
+            "matchPackageNames": ["renovate"],
+            "schedule": ["before 6am on monday"],
+            "automerge": true,
+            "automergeType": "branch",
+            "addLabels": ["renovate/weekly-schedule"]
+        },
+    
         // Auto Merge Types
         { "matchUpdateTypes": ["minor", "patch", "digest"], "automerge": true, "automergeType": "branch" },
         { "matchUpdateTypes": ["major"], "automerge": false, "automergeType": "pr" },
