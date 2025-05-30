@@ -24,7 +24,7 @@
         },
     
         // Auto Merge Types
-        { "matchUpdateTypes": ["minor", "patch", "digest"], "automerge": true, "automergeType": "branch" },
+        { "matchUpdateTypes": ["minor", "patch", "pin", "digest", "pinDigest"], "automerge": true, "automergeType": "branch" },
         { "matchUpdateTypes": ["major"], "automerge": false, "automergeType": "pr" },
 
         // Type Labels
