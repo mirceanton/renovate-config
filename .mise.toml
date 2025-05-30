@@ -1,6 +1,6 @@
 [tools]
 node = "22"
-"npm:renovate" = "40.13.0"
+"npm:renovate" = "40.32.6"
 
 "aqua:rhysd/actionlint" = "1.7.7"
 "pipx:yamllint" = "1.37.1"
