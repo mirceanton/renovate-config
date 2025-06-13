@@ -39,7 +39,7 @@
         {"matchDatasources": ["go", "golang-version"], "semanticCommitType": "fix", "semanticCommitScope": "go" },
         {"matchDatasources": ["helm"], "semanticCommitType": "fix", "semanticCommitScope": "helm" },
         {"matchDatasources": ["npm", "node-version"], "matchDepTypes": "dependencies", "semanticCommitType": "fix", "semanticCommitScope": "node" },
-        {"matchDatasources": ["npm", "node-version"], "matchDepTypes": "devDependencies", "semanticCommitType": "chore", "semanticCommitScope": "npm" },
+        {"matchDatasources": ["npm", "node-version"], "matchDepTypes": "devDependencies", "semanticCommitType": "chore", "semanticCommitScope": "npm", "commitMessagePrefix": "{{semanticCommitType}}({{semanticCommitScope}}):" },
         {"matchDatasources": ["pypi", "python-version"], "semanticCommitType": "fix", "semanticCommitScope": "python" },
         {"matchDatasources": ["rubygems", "ruby-version"], "semanticCommitType": "fix", "semanticCommitScope": "ruby" },
         {"matchDatasources": ["terraform-module", "terraform-provider"], "semanticCommitType": "fix", "semanticCommitScope": "terraform" },
