@@ -1,5 +1,5 @@
 [tools]
 node = "22"
-"npm:renovate" = "40"
+"npm:renovate" = "41"
 "aqua:rhysd/actionlint" = "1"
 "pipx:yamllint" = "1"
