@@ -10,7 +10,8 @@
         "helpers:pinGitHubActionDigests",
         "github>mirceanton/renovate-config//semantic-commits.json5",
         "github>mirceanton/renovate-config//custom-manager-github-links.json5",
-        "github>mirceanton/renovate-config//custom-manager-yaml.json5"
+        "github>mirceanton/renovate-config//custom-manager-yaml.json5",
+        "github>mirceaanton/renovate-config//custom-manager-actions.json5"
     ],
     "minimumReleaseAge": "3 days",
     "packageRules": [
