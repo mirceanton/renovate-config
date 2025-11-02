@@ -46,6 +46,13 @@
 
         // Semantic Commit Managers Scopes
         { "matchManagers": ["github-actions"], "semanticCommitType": "ci", "semanticCommitScope": "github-action" },
-        { "matchManagers": ["mise"], "semanticCommitType": "chore", "semanticCommitScope": "mise" }
+        { "matchManagers": ["mise"], "semanticCommitType": "chore", "semanticCommitScope": "mise" },
+
+        // Remove "!" from major updates for mise and GitHub Actions
+        {
+            "matchManagers": ["github-actions", "mise"],
+            "matchUpdateTypes": ["major"],
+            "commitMessagePrefix": "{{semanticCommitType}}({{semanticCommitScope}}):"
+        }
     ]
 }
