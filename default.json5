@@ -13,7 +13,6 @@
         "github>mirceanton/renovate-config//custom-manager-yaml.json5",
         "github>mirceanton/renovate-config//custom-manager-actions.json5"
     ],
-    "minimumReleaseAge": "3 days",
     "packageRules": [
         // Package Scheduling
         {
