@@ -2,4 +2,4 @@
 node = "24"
 "npm:renovate" = "43"
 "aqua:rhysd/actionlint" = "1"
-"pipx:yamllint" = "1"
+"pipx:yamllint" = "1.38.0"
