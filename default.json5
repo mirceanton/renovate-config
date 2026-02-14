@@ -5,7 +5,6 @@
     "timezone": "Europe/Bucharest",
     "gitAuthor": "mr-borboto[bot] <170036086+mr-borboto[bot]@users.noreply.github.com>",
     "rebaseWhen": "behind-base-branch",
-    "recreateWhen": "always",
     "rebaseStalePrs": true,
     "extends": [
         ":disableRateLimiting",
