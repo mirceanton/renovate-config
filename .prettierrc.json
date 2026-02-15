@@ -1,0 +1,14 @@
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": ["*.json", "*.json5", "*.jsonc"],
+      "options": {
+        "parser": "json",
+        "tabWidth": 2,
+        "trailingComma": "none"
+      }
+    }
+  ]
+}
