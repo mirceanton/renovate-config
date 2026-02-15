@@ -1,14 +1,12 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "regexManagers": [
-        {
-            "fileMatch": ["^action\\.ya?ml$"],
-            "matchStrings": [
-                "using:\\s*['\"]?node(?<currentValue>\\d+)['\"]?"
-            ],
-            "depNameTemplate": "node",
-            "datasourceTemplate": "node-version",
-            "versioningTemplate": "node"
-        }
-    ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "regexManagers": [
+    {
+      "fileMatch": ["^action\\.ya?ml$"],
+      "matchStrings": ["using:\\s*['\"]?node(?<currentValue>\\d+)['\"]?"],
+      "depNameTemplate": "node",
+      "datasourceTemplate": "node-version",
+      "versioningTemplate": "node"
+    }
+  ]
 }

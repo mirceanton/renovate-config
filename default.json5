@@ -1,52 +1,81 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "dependencyDashboard": true,
-    "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-    "timezone": "Europe/Bucharest",
-    "gitAuthor": "mr-borboto[bot] <170036086+mr-borboto[bot]@users.noreply.github.com>",
-    "rebaseWhen": "behind-base-branch",
-    "rebaseStalePrs": true,
-    "extends": [
-        ":disableRateLimiting",
-        "config:recommended",
-        "helpers:pinGitHubActionDigests",
-        "github>mirceanton/renovate-config//semantic-commits.json5",
-        "github>mirceanton/renovate-config//custom-manager-github-links.json5",
-        "github>mirceanton/renovate-config//custom-manager-yaml.json5",
-        "github>mirceanton/renovate-config//custom-manager-actions.json5"
-    ],
-    "packageRules": [
-        // Package Scheduling
-        {
-            "matchPackageNames": ["renovate"],
-            "schedule": ["before 6am on monday"],
-            "automerge": true,
-            "automergeType": "branch",
-            "addLabels": ["renovate/weekly-schedule"]
-        },
-    
-        // Auto Merge Types
-        { "matchUpdateTypes": ["minor", "patch", "pin", "digest", "pinDigest"], "automerge": true, "automergeType": "branch" },
-        { "matchUpdateTypes": ["major"], "automerge": false, "automergeType": "pr" },
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "timezone": "Europe/Bucharest",
+  "gitAuthor": "mr-borboto[bot] <170036086+mr-borboto[bot]@users.noreply.github.com>",
+  "rebaseWhen": "behind-base-branch",
+  "rebaseStalePrs": true,
+  "extends": [
+    ":disableRateLimiting",
+    "config:recommended",
+    "helpers:pinGitHubActionDigests",
+    "github>mirceanton/renovate-config//semantic-commits.json5",
+    "github>mirceanton/renovate-config//custom-manager-github-links.json5",
+    "github>mirceanton/renovate-config//custom-manager-yaml.json5",
+    "github>mirceanton/renovate-config//custom-manager-actions.json5"
+  ],
+  "packageRules": [
+    // Package Scheduling
+    {
+      "matchPackageNames": ["renovate"],
+      "schedule": ["before 6am on monday"],
+      "automerge": true,
+      "automergeType": "branch",
+      "addLabels": ["renovate/weekly-schedule"]
+    },
 
-        // Type Labels
-        { "matchUpdateTypes": ["major"], "labels": ["type/major"] },
-        { "matchUpdateTypes": ["minor"], "labels": ["type/minor"] },
-        { "matchUpdateTypes": ["patch"], "labels": ["type/patch"] },
-        { "matchUpdateTypes": ["digest"], "labels": ["type/digest"] },
+    // Auto Merge Types
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest", "pinDigest"],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "automergeType": "pr"
+    },
 
-        // Datasource Labels
-        { "matchDatasources": ["github-releases", "github-tags"], "addLabels": ["renovate/github-release"] },
-        { "matchDatasources": ["docker"], "addLabels": ["renovate/container"] },
-        { "matchDatasources": ["go", "golang-version"], "addLabels": ["renovate/go"] },
-        { "matchDatasources": ["helm"], "addLabels": ["renovate/helm"] },
-        { "matchDatasources": ["npm", "node-version"], "addLabels": ["renovate/node"] },
-        { "matchDatasources": ["pypi", "python-version"], "addLabels": ["renovate/python"] },
-        { "matchDatasources": ["rubygems", "ruby-version"], "addLabels": ["renovate/ruby"] },
-        { "matchDatasources": ["terraform-module", "terraform-provider"], "addLabels": ["renovate/terraform"] },
+    // Type Labels
+    { "matchUpdateTypes": ["major"], "labels": ["type/major"] },
+    { "matchUpdateTypes": ["minor"], "labels": ["type/minor"] },
+    { "matchUpdateTypes": ["patch"], "labels": ["type/patch"] },
+    { "matchUpdateTypes": ["digest"], "labels": ["type/digest"] },
 
-        // Manager Labels
-        { "matchManagers": ["github-actions"], "addLabels": ["renovate/github-action"] },
-        { "matchManagers": ["mise"], "addLabels": ["renovate/mise"] }
-    ]
+    // Datasource Labels
+    {
+      "matchDatasources": ["github-releases", "github-tags"],
+      "addLabels": ["renovate/github-release"]
+    },
+    { "matchDatasources": ["docker"], "addLabels": ["renovate/container"] },
+    {
+      "matchDatasources": ["go", "golang-version"],
+      "addLabels": ["renovate/go"]
+    },
+    { "matchDatasources": ["helm"], "addLabels": ["renovate/helm"] },
+    {
+      "matchDatasources": ["npm", "node-version"],
+      "addLabels": ["renovate/node"]
+    },
+    {
+      "matchDatasources": ["pypi", "python-version"],
+      "addLabels": ["renovate/python"]
+    },
+    {
+      "matchDatasources": ["rubygems", "ruby-version"],
+      "addLabels": ["renovate/ruby"]
+    },
+    {
+      "matchDatasources": ["terraform-module", "terraform-provider"],
+      "addLabels": ["renovate/terraform"]
+    },
+
+    // Manager Labels
+    {
+      "matchManagers": ["github-actions"],
+      "addLabels": ["renovate/github-action"]
+    },
+    { "matchManagers": ["mise"], "addLabels": ["renovate/mise"] }
+  ]
 }
