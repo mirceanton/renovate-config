@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  // Keep the mise lockfile (mise.lock) in sync whenever Renovate bumps a tool
+  // version. `mise lock` re-resolves the new version and refreshes the
+  // checksums/URLs for every platform already present in the lockfile, then the
+  // updated mise.lock is committed alongside the .mise.toml change.
+  "mise": {
+    "postUpgradeTasks": {
+      "commands": ["mise lock"],
+      "fileFilters": ["mise.lock"],
+      "executionMode": "branch"
+    }
+  }
+}
