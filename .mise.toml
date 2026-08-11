@@ -1,6 +1,6 @@
 [tools]
 node = "latest"
-"npm:renovate" = "latest"
+"npm:renovate" = { version = "latest", trust_policy_excludes = ["@yarnpkg/libzip@3.2.2"] }
 
 task = "latest"
 gh = "latest"
