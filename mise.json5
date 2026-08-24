@@ -6,6 +6,12 @@
   // checksums/URLs for every platform already present in the lockfile, then the
   // updated mise.lock is committed alongside the .mise.toml change.
   "mise": {
+    // Wait a few days after a tool is tagged before opening/locking a PR for
+    // it. Fresh releases routinely outrun aqua-registry's checksum/GitHub
+    // artifact attestation metadata, so `mise install` fails supply-chain
+    // verification in CI (e.g. goreleaser v2.18.0 the day it was tagged) even
+    // though nothing is actually wrong with the update itself.
+    "minimumReleaseAge": "3 days",
     "postUpgradeTasks": {
       "commands": ["mise lock"],
       "fileFilters": ["mise.lock"],
