@@ -52,6 +52,10 @@
     },
     { "matchDatasources": ["docker"], "addLabels": ["renovate/container"] },
     {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "1 day"
+    },
+    {
       "matchDatasources": ["go", "golang-version"],
       "addLabels": ["renovate/go"]
     },
