@@ -7,6 +7,26 @@
   "gitIgnoredAuthors": ["noreply@github.com"],
   "rebaseWhen": "behind-base-branch",
   "rebaseStalePrs": true,
+
+  // Supply-chain protection: hold every update for 3 days after release so
+  // malicious publishes get caught by OSV/researchers before automerge runs.
+  // osvVulnerabilityAlerts raises immediate fix PRs for versions OSV flags as
+  // vulnerable/malicious (OpenSSF Malicious Packages feed), even while young.
+  // Behaviour is timestamp-optional because GHCR/Quay/ECR do not expose release
+  // timestamps and the default (timestamp-required) would hold those updates
+  // forever (renovatebot/renovate#39064). Docker Hub, npm, PyPI, Helm and the
+  // GitHub datasources DO provide timestamps and get the full 3-day cooldown.
+  "minimumReleaseAge": "3 days",
+  "minimumReleaseAgeBehaviour": "timestamp-optional",
+  "osvVulnerabilityAlerts": true,
+  // timestamp-optional logs a Dependency Dashboard warning for every release
+  // without a timestamp (all GHCR images); remap to info to keep it readable.
+  "logLevelRemap": [
+    {
+      "matchMessage": "/Some .+ did not have a releaseTimestamp, but as we're running with minimumReleaseAgeBehaviour=timestamp-optional, proceeding/",
+      "newLogLevel": "info"
+    }
+  ],
   "extends": [
     ":disableRateLimiting",
     "config:recommended",
@@ -18,6 +38,14 @@
     "github>mirceanton/renovate-config//mise.json5"
   ],
   "packageRules": [
+    // Own images are built by our own CI - exempt from the release-age cooldown
+    {
+      "description": "Own custom images are trusted; no supply-chain cooldown needed",
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["/^ghcr\\.io/mirceanton//"],
+      "minimumReleaseAge": null
+    },
+
     // Package Scheduling
     {
       "matchPackageNames": ["renovate"],
@@ -51,10 +79,6 @@
       "addLabels": ["renovate/github-release"]
     },
     { "matchDatasources": ["docker"], "addLabels": ["renovate/container"] },
-    {
-      "matchDatasources": ["npm"],
-      "minimumReleaseAge": "1 day"
-    },
     {
       "matchDatasources": ["go", "golang-version"],
       "addLabels": ["renovate/go"]
