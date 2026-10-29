@@ -1,21 +1,17 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
 
-  // Keep the mise lockfile (mise.lock) in sync whenever Renovate bumps a tool
-  // version. `mise lock` re-resolves the new version and refreshes the
-  // checksums/URLs for every platform already present in the lockfile, then the
-  // updated mise.lock is committed alongside the .mise.toml change.
+  // mise tools are declared per repo in .mise.toml. The lockfiles were dropped
+  // in favour of `[settings] minimum_release_age`, so there is nothing left for
+  // Renovate to regenerate: the old postUpgradeTasks ran `mise lock`, which is
+  // what produced version-only, unusable lockfile diffs whenever that run hit a
+  // mise build that silently skipped a mismatched platform entry.
   "mise": {
-    // Wait a few days after a tool is tagged before opening/locking a PR for
-    // it. Fresh releases routinely outrun aqua-registry's checksum/GitHub
-    // artifact attestation metadata, so `mise install` fails supply-chain
-    // verification in CI (e.g. goreleaser v2.18.0 the day it was tagged) even
-    // though nothing is actually wrong with the update itself.
-    "minimumReleaseAge": "3 days",
-    "postUpgradeTasks": {
-      "commands": ["mise lock"],
-      "fileFilters": ["mise.lock"],
-      "executionMode": "branch"
-    }
+    // Wait a few days after a tool is tagged before opening a PR for it. Fresh
+    // releases routinely outrun aqua-registry's checksum/GitHub artifact
+    // attestation metadata, so `mise install` fails supply-chain verification
+    // in CI (e.g. goreleaser v2.18.0 the day it was tagged) even though nothing
+    // is actually wrong with the update itself.
+    "minimumReleaseAge": "3 days"
   }
 }
