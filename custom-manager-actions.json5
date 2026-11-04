@@ -1,12 +1,22 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "regexManagers": [
-    {
-      "fileMatch": ["^action\\.ya?ml$"],
-      "matchStrings": ["using:\\s*['\"]?node(?<currentValue>\\d+)['\"]?"],
-      "depNameTemplate": "node",
-      "datasourceTemplate": "node-version",
-      "versioningTemplate": "node"
-    }
-  ]
+
+  // Intentionally no regexManagers.
+  //
+  // `runs.using` in a JavaScript action manifest is not a free version pin: the
+  // GitHub Actions runner only accepts a fixed set of runtimes (`node20`,
+  // `node24` as of 2026-11). Rewriting it from the repo's `.mise.toml` node pin
+  // makes Renovate produce manifests that the runner refuses to load and that
+  // actionlint rejects:
+  //
+  //   invalid runner name "node26" at runs.using ... valid runners are
+  //   "composite", "docker", "node20", and "node24"
+  //
+  // That is exactly what broke the node 24 -> 26 PRs in action-folder-matrix,
+  // action-semver-release and action-calver-release: the `.mise.toml` hunk was
+  // correct, the `action.yml` `using:` hunk was invalid, so the lint job failed
+  // and every consumer workflow would have failed to load the action.
+  //
+  // `.mise.toml` keeps moving through the `mise` manager. Bump `runs.using` by
+  // hand only once GitHub publishes support for the new runtime.
 }
