@@ -35,6 +35,7 @@
     "github>mirceanton/renovate-config//custom-manager-github-links.json5",
     "github>mirceanton/renovate-config//custom-manager-yaml.json5",
     "github>mirceanton/renovate-config//custom-manager-actions.json5",
+    "github>mirceanton/renovate-config//custom-manager-oci.json5",
     "github>mirceanton/renovate-config//mise.json5"
   ],
   "packageRules": [

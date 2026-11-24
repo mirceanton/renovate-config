@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Process `oci://<registry>/<repo>:<tag>` references that no built-in manager parses, like the Flux Operator distribution artifact in HelmRelease values",
+      "managerFilePatterns": ["/\\.ya?ml(?:\\.j2)?$/"],
+      "matchStrings": [
+        "oci://(?<depName>[^:\\s\"']+):(?<currentValue>[^\\s\"'@]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
+}
